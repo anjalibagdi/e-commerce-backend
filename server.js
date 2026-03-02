@@ -13,7 +13,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3000' }));
+app.use(cors({
+  origin: "*"
+}));
+
 app.use(express.json());
 app.use(morgan('dev'));
 
